@@ -2,7 +2,7 @@
 # 項目の定義はハブの assets/README.md を参照。
 #   https://github.com/nobeyama-radio-observatory/nro-context/blob/main/assets/README.md
 # 2026-11-18 に、ハブの仮置きの台帳（assets/nro45m.yaml）から移した（判断記録 0006）。
-# 公開資料と40周年記念誌から AI が埋めた。未記入は聞き取り（interviews/）で埋める。
+# 公開資料と40周年記念誌から AI が埋め、聞き取り（interviews/）で補った。
 #
 # この台帳にない id の置き場所は、ハブの assets/README.md の資産の索引で引ける。
 #
@@ -25,12 +25,16 @@
     condition: >-
       2026年11月に、共通 IF 系の減衰器の1台が故障し、交換。
       切り替えの制御は観測所の技術系職員が作ったソフトウェアで、COSMOS からの指示で自動で切り替わる。
-      経費が十分でないため、一部の制御器は観測所で作ったマイコンを使う。2016年ごろ、FOREST の IF の帯域を広げるため切り替えの装置を足した
-    effort: 未記入
-  renewal: 未記入
-  owner_role: 未定
-  maintainers: 未記入
+      経費が十分でないため、一部の制御器は観測所で作ったマイコンを使う。独自のマイコンなので故障がやや心配だが、いまのところ問題なく動いている。2016年ごろ、FOREST の IF の帯域を広げるため切り替えの装置を足した
+    effort: 小
+  renewal: >-
+    YATSUGATAKE は入力の帯域が 2〜4 GHz で SAM45 と同じなので、そのまま使える。SAM45 で HOT の観測のたびに行っていたレベルの調整は、YATSUGATAKE では要らなくなる。
+    次の世代の RFSoC で帯域が広がる場合は、全面的に更新する
+  owner_role: 受信機チーム（装置システムグループ）
+  maintainers: 2
   sources:
     - 構成：データシート（Distribution of IFs to Backends）
     - 保守：障害情報 Trouble ID 2026-7
     - 導入、制御、改修：40周年記念誌 p.53
+    - 手間（回答者の見立て）、担い手の数、更新の見込み、担当：聞き取り2026-11-18 問1、問2
+  note: 7BEE は仕様が違うため、共通 IF 系を使っていない。eQ は、既存の IF 系と SAM45 を前提にインターフェースを作っている（聞き取り2026-11-18 問2）
