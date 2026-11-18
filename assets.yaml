@@ -1,0 +1,36 @@
+# 資産の台帳：45m 鏡の IF 系
+# 項目の定義はハブの assets/README.md を参照。
+#   https://github.com/nobeyama-radio-observatory/nro-context/blob/main/assets/README.md
+# 2026-11-18 に、ハブの仮置きの台帳（assets/nro45m.yaml）から移した（判断記録 0006）。
+# 公開資料と40周年記念誌から AI が埋めた。未記入は聞き取り（interviews/）で埋める。
+#
+# この台帳にない id の置き場所は、ハブの assets/README.md の資産の索引で引ける。
+#
+# 出典の略記
+#   データシート：45m 鏡のデータシート https://www.nro.nao.ac.jp/en/projects/45m/datasheets/ （2026-11-18 に確認）
+#   障害情報：NRO45m 障害情報 https://www.nro.nao.ac.jp/projects/45m/projects-45m-trouble/ （2026年11月12日更新の版）
+#   40周年記念誌：『野辺山宇宙電波観測所40周年記念誌』2022年2月（国立国会図書館 請求記号 MB12-M7）。p.N はそのページ。
+#     書誌の詳細はハブの history/README.md の出典の略記。年次報告と食い違うときは年次報告を採る
+#   聞き取りYYYY-MM-DD(-n) 問N：interviews/YYYY-MM-DD(-n).md の問N
+
+- id: if-system
+  name: IF 系（共通 IF 系を含む）
+  kind: 信号処理
+  part_of: nro45m
+  depends_on: [sw-cosmos]
+  status: 運用中
+  introduced: いまの IF 系（「新IF系」）は、SAM45 とともに2010年ごろから共同利用に使っている。AOS を使っていた以前のシステムとは別に新たに入れたため「新IF系」と呼ぶ
+  maintenance:
+    by: 所内
+    condition: >-
+      2026年11月に、共通 IF 系の減衰器の1台が故障し、交換。
+      切り替えの制御は観測所の技術系職員が作ったソフトウェアで、COSMOS からの指示で自動で切り替わる。
+      経費が十分でないため、一部の制御器は観測所で作ったマイコンを使う。2016年ごろ、FOREST の IF の帯域を広げるため切り替えの装置を足した
+    effort: 未記入
+  renewal: 未記入
+  owner_role: 未定
+  maintainers: 未記入
+  sources:
+    - 構成：データシート（Distribution of IFs to Backends）
+    - 保守：障害情報 Trouble ID 2026-7
+    - 導入、制御、改修：40周年記念誌 p.53
